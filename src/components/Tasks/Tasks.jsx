@@ -10,7 +10,6 @@ import Task from "./Task";
 
 
 const Tasks = ({list, onEditTitle, onAddTask, onEditTask,onRemoveTask,onCompleteTask, withoutEmpty}) => {
-
     const editTitle = () => {
         const newTitle = window.prompt('Название списка', list.name);
         if (newTitle) {
@@ -22,13 +21,6 @@ const Tasks = ({list, onEditTitle, onAddTask, onEditTask,onRemoveTask,onComplete
             });
         }
     };
-
-    const onEdit = ()=>{
-
-    }
-
-
-
     return (<div className='tasks'>
             <Link to={`/lists/${list.id}`}>
                 <h2 style={{color:list.color.hex}} className='tasks_title'>
@@ -44,7 +36,6 @@ const Tasks = ({list, onEditTitle, onAddTask, onEditTask,onRemoveTask,onComplete
                 <AddTaskForm key={list.id} list={list} onAddTask={onAddTask}/>
             </div>
         </div>
-
     )
 }
 export default Tasks;
